@@ -1,0 +1,12 @@
+server:
+  port: 1111
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:1111/eureka/
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    hostname: localhost
+ # server:
+ #   enable-self-preservation:  #在调试时关闭eureka注册中心的保护机制
