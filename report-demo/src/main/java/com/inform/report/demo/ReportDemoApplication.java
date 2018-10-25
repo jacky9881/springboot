@@ -1,4 +1,4 @@
-package com.inform.report.demo;
+package com.xxx.report.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
