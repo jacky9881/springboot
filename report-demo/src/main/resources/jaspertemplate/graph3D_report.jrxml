@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="graph3D_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c7ea2588-39a0-4499-b5a2-06aede7efc27">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="order"/>
+	<subDataset name="Dataset1" uuid="6c0ae9bc-f9fc-4ce7-b2c9-7ea7a6eaa5d2">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="order"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT u.name,count(*) AS orderNum
+FROM report.`user` u
+LEFT JOIN report.`order` o
+ON u.id = o.userid
+group by u.id
+ORDER BY orderNum]]>
+		</queryString>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+		</field>
+		<field name="orderNum" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="orderNum"/>
+		</field>
+		<group name="name">
+			<groupExpression><![CDATA[$F{name}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT u.name,count(*) AS orderNum
+FROM report.`user` u
+LEFT JOIN report.`order` o
+ON u.id = o.userid
+group by u.id
+ORDER BY orderNum]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<field name="orderNum" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="orderNum"/>
+	</field>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="233" height="30" uuid="a3c5dbea-e939-4816-9c51-b9a3c3e1bb4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[3D图报表例子]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="666" splitType="Stretch">
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="560" height="200" uuid="d5082e27-9e27-4c9d-b49e-daf2384ee4bd"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="Dataset1" uuid="4021ea55-c836-4121-9e30-c324f76b4d0c">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{orderNum}]]></valueExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<bar3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="200" width="560" height="200" uuid="b3197519-b51a-44d0-907c-54d931f33fe6"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Dataset1" uuid="8db27794-aaef-4eaa-a904-7833ccce39bc">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{name}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{orderNum}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<stackedBar3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="400" width="560" height="200" uuid="4b53fb3c-9160-4afc-be0e-822310ed684b"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="Dataset1" uuid="63010877-8365-46c1-b810-3fc126220b99">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{name}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{orderNum}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</stackedBar3DChart>
+		</band>
+	</summary>
+</jasperReport>

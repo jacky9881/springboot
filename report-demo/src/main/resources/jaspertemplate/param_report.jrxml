@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="param_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2cfc2c73-0bad-42a0-862b-62dbe690f276">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="order"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="userid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select *
+from report.order
+where userid =  CONVERT($P{userid},SIGNED)]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="order"/>
+	</field>
+	<field name="userid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="userid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="order"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="order"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="order"/>
+	</field>
+	<field name="price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="order"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="0" width="240" height="30" uuid="de0b47f7-7bec-498b-9b4d-4a8c9201de99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="20"/>
+				</textElement>
+				<text><![CDATA[带参数的报表例子]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="1" width="100" height="30" uuid="b101b854-03d2-4913-af32-6ad6d8d97292"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[编号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="1" width="100" height="30" uuid="f82c361f-f66c-4cbc-99eb-82b263f20c45"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[用户ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="1" width="100" height="30" uuid="3f8153df-3b23-429c-8a31-3c88eac2e419">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="611b9819-af30-42d6-bb3e-1b43daa5d4ee"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[订单名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="1" width="100" height="30" uuid="6fa3a3eb-4151-4faa-b713-aa4e0130a218"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[订单地址]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="1" width="100" height="30" uuid="9ff541bf-c003-4c48-ad1c-f0b370df2fbb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[订单价格]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="100" height="30" uuid="abb7079c-5745-4e56-9eab-fbd9d3a1a9f8"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="30" uuid="0ef40e70-2551-42b2-923e-247430e1d95b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="100" height="30" uuid="2b0bb458-3656-4eae-9e3f-4aa27890beeb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="611b9819-af30-42d6-bb3e-1b43daa5d4ee"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="100" height="30" uuid="c984577f-d441-4c58-91b8-117c30fc200d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="100" height="30" uuid="8409492b-b5f1-4b26-812c-f47967df5c96">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c51ad2e-622c-422a-ab6c-f7d158ffde73"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

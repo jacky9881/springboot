@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="singleTable" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cbb817d3-1176-4c69-b79f-c883c97254e1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="user_Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="myDataset" uuid="ca240cb8-6e00-49c9-ac29-f074269edbec">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="order"/>
+		<queryString language="SQL">
+			<![CDATA[select * from report.user]]>
+		</queryString>
+		<field name="name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+		</field>
+		<field name="city" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="city"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+		</field>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from report.user]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<field name="city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="city"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
+	</field>
+	<variable name="getCount" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{id}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="192" y="0" width="170" height="30" uuid="77be318f-5c0d-4fca-8f1b-c215156a6ef6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="20"/>
+				</textElement>
+				<text><![CDATA[单表报表例子]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="450" y="50" width="100" height="30" uuid="678b7c6f-2ee0-4289-98b7-231ca83654d6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="50" width="70" height="30" uuid="f643c40e-7242-4db1-beb1-b903b15fa678"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="12"/>
+				</textElement>
+				<text><![CDATA[日期：]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="0" width="100" height="30" uuid="5bc70d5e-2ce8-4337-82b8-5bf1c1d7e014">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b014d1d-2add-4f14-b2b8-031f63ad4877"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="30" uuid="e80e9c36-a00a-4b2a-97ce-8dddd2cce57a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[编号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="100" height="30" uuid="4544bb5a-6d52-441a-9cc3-30a3c8e51086"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[城市]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="120" y="-1" width="100" height="30" uuid="5912da6f-1850-4a8f-b568-7935c96fdf7e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="-1" width="100" height="30" uuid="77364c2d-3eb5-47d7-85e0-e273615f1dc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b014d1d-2add-4f14-b2b8-031f63ad4877"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="-1" width="100" height="30" uuid="11ddc723-0051-43fe-896e-0e62871e18ec"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42">
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="30" uuid="bdaa2a07-69f4-4bc7-aa41-1e4f2b6ae86f"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="仿宋" size="14"/>
+				</textElement>
+				<text><![CDATA[合计]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="100" height="30" uuid="395c6384-7896-4092-abb2-82bfdc82b1e5"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="0" width="100" height="30" uuid="9bdb16bd-7877-4c19-bb89-810391aa36c9"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{getCount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

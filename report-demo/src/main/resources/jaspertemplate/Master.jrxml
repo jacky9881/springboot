@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Master" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11c1b924-9f7d-456b-a58e-809db73bf589">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="SLAVE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="stuNo" class="java.lang.Integer"/>
+	<field name="stuName" class="java.lang.String"/>
+	<field name="subjectList" class="java.util.List"/>
+	<variable name="getAverageScore" class="java.lang.Double" incrementType="Report"/>
+	<title>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="240" y="0" width="100" height="30" uuid="6a46c466-f06b-4119-9d9f-8b422dd4e278"/>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="470" y="0" width="100" height="30" uuid="947e20d9-6e67-49b6-865c-2a7f382907db"/>
+				<textElement>
+					<font fontName="仿宋" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="1" width="100" height="30" uuid="2d480ff1-7bbf-47a4-94ed-8cedb5e812b5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[学号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="1" width="100" height="30" uuid="6b068047-16d1-4cde-a3fe-37ff487d73d2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="1" width="100" height="30" uuid="4f09c915-6838-4487-a0a9-618607f669fc"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[学科]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="1" width="100" height="30" uuid="f291c31d-8d0c-4cd1-b60b-84a4a81f9e4d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[老师]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="1" width="100" height="30" uuid="92b61226-1065-4e6e-bbe5-1650a53d4341"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[分数]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<subreport>
+				<reportElement x="190" y="1" width="300" height="20" uuid="701481ed-e271-4f42-be2b-1166c2c5b48b"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Slave.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="-10" y="0" width="100" height="20" uuid="ccb794be-4f62-45bc-8410-ce597fcbe5a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="45b15556-f88e-4bbe-a9c6-8dc1aaa3c858"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stuNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="1" width="100" height="20" uuid="df47fe3e-9739-4693-9607-c06092af0089">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8830db4-a199-4421-a7f6-078b171aa6c9"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stuName}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Band">
+				<reportElement positionType="FixRelativeToBottom" x="390" y="21" width="100" height="20" uuid="71f4ffb2-caab-4282-9a8a-cd54311b8ed8"/>
+				<textFieldExpression><![CDATA[$V{getAverageScore}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="-10" y="21" width="400" height="20" uuid="7501c25a-976f-4600-b3ef-c7cd657631fb"/>
+				<text><![CDATA[平均分]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

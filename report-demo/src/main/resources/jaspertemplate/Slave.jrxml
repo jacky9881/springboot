@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Slave" pageWidth="300" pageHeight="20" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="58521c99-06c6-43a1-b6b9-5ce3998dea91">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subjectName" class="java.lang.String"/>
+	<field name="teacherName" class="java.lang.String"/>
+	<field name="score" class="java.lang.Double"/>
+	<variable name="averageScore" class="java.lang.Double" calculation="Average">
+		<variableExpression><![CDATA[$F{score}]]></variableExpression>
+	</variable>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="2dbb5a33-5d9c-488e-8382-5417f3623ee0"/>
+				<textFieldExpression><![CDATA[$F{subjectName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="bc3b7689-620b-42da-a4cb-23a40436140f"/>
+				<textFieldExpression><![CDATA[$F{teacherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="0aca25ea-bba8-419e-a8e2-b48a78f1517a"/>
+				<textFieldExpression><![CDATA[$F{score}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
