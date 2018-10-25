@@ -1,4 +1,4 @@
-package com.inform.report.demo.configration;
+package com.xxx.report.demo.configration;
 
 import javax.sql.DataSource;
 
