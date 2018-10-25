@@ -1,4 +1,4 @@
-package com.inform.report.demo.web;
+package com.xxx.report.demo.web;
 
 import java.io.File;
 import java.net.URLEncoder;
