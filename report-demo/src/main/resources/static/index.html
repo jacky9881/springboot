@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>报表例子</title>
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+    $("#param_pdf").click(function(){  
+//     	 $.ajax({
+//       	   type: "GET",
+//       	   dataType: 'json',
+//       	   async:false,
+//       	   data:{format:"pdf",userid:3},
+//       	   url: "report/param_report",
+//       	   success: function(msg){
+//       	   }
+//       	});
+    	var userid = $("#userid").val();
+        window.location.href = "report/param_report?format=pdf&userid=" + userid
+    });
+    
+    $("#param_xlsx").click(function(){   
+    	var userid = $("#userid").val();
+        window.location.href = "report/param_report?format=xlsx&userid=" + userid
+    });
+    
+    $("#param_docx").click(function(){   
+    	var userid = $("#userid").val();
+     	window.location.href = "report/param_report?format=docx&userid=" + userid
+    });
+    
+   
+})
+</script>
+<style>
+table, table tr th, table tr td {
+	border: 1px solid #0094ff;
+}
+
+table {
+	width: 100%;
+	min-height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>报表类型</td>
+			<td>预览</td>
+			<td>Excel下载</td>
+			<td>Word下载</td>
+		</tr>
+		<tr>
+			<td>单报表例子</td>
+			<td><a
+				href="report/singleTable?format=pdf">展示</a></td>
+			<td><a
+				href="report/singleTable?format=xlsx">下载</a></td>
+			<td><a
+				href="report/singleTable?format=docx">下载</a></td>
+		</tr>
+		<tr>
+			<td>主从报表例子</td>
+			<td><a
+				href="report/main_report?format=pdf">展示</a></td>
+			<td><a
+				href="report/main_report?format=xlsx">下载</a></td>
+			<td><a
+				href="report/main_report?format=docx">下载</a></td>
+		</tr>
+		<tr>
+			<td>信息展示报表例子</td>
+			<td><a href="report/person_info?format=pdf">展示</a></td>
+			<td><a
+				href="report/person_info?format=xlsx">下载</a></td>
+			<td><a
+				href="report/person_info?format=docx">下载</a></td>
+		</tr>
+		<tr>
+			<td>带参数报表例子 &nbsp;&nbsp;&nbsp;&nbsp;
+				用户ID:<select id="userid">
+	  				<option value ="1">1</option>
+	  				<option value ="2">2</option>
+	  				<option value="3">3</option>
+	  				<option value="4">4</option>
+				</select>
+			</td>
+			<td><a href="#" id="param_pdf">展示</a></td>
+			<td><a href="#" id="param_xlsx">下载</a></td>
+			<td><a href="#" id="param_docx">下载</a></td>
+		</tr>
+		<tr>
+			<td>图(2D)报表例子</td>
+			<td><a
+				href="report/graph_report?format=pdf">展示</a></td>
+			<td><a
+				href="report/graph_report?format=xlsx">下载</a></td>
+			<td><a
+				href="report/graph_report?format=docx">下载</a></td>
+		</tr>
+		<tr>
+			<td>图(3D)报表例子</td>
+			<td><a
+				href="report/graph3D_report?format=pdf">展示</a></td>
+			<td><a
+				href="report/graph3D_report?format=xlsx">下载</a></td>
+			<td><a
+				href="report/graph3D_report?format=docx">下载</a></td>
+		</tr>
+		<tr>
+			<td>图(2/3D)表混合报表例子</td>
+			<td><a href="report/mix?format=pdf">展示</a></td>
+			<td><a href="report/mix?format=xlsx">下载</a></td>
+			<td><a href="report/mix?format=docx">下载</a></td>
+		</tr>
+	</table>
+</body>
+</html>
